@@ -1,0 +1,52 @@
+{
+  "11155111": {
+    "chainId": 11155111,
+    "name": "Ethereum Sepolia",
+    "rpcUrl": "https://ethereum-sepolia-rpc.publicnode.com"
+  },
+  "1": {
+    "chainId": 1,
+    "name": "Ethereum Mainnet",
+    "rpcUrl": "https://eth.llamarpc.com"
+  },
+  "43113": {
+    "chainId": 43113,
+    "name": "Avalanche Testnet",
+    "rpcUrl": "https://avalanche-fuji.infura.io/v3/{INFURA_API_KEY}"
+  },
+  "97": {
+    "chainId": 97,
+    "name": "Binance Testnet",
+    "rpcUrl": "https://data-seed-prebsc-1-s1.bnbchain.org:8545"
+  },
+  "59140": {
+    "chainId": 59140,
+    "name": "Linea Testnet",
+    "rpcUrl": "https://linea-sepolia.infura.io/v3/{INFURA_API_KEY}"
+  },
+  "80002": {
+    "chainId": 80002,
+    "name": "Polygon Amoy",
+    "rpcUrl": "https://polygon-amoy.infura.io/v3/{INFURA_API_KEY}"
+  },
+  "1993": {
+    "chainId": 1993,
+    "name": "B3 Sepolia",
+    "rpcUrl": "https://sepolia.b3.fun/http"
+  },
+  "3441006": {
+    "chainId": 3441006,
+    "name": "Manta Sepolia",
+    "rpcUrl": "https://pacific-rpc.sepolia-testnet.manta.network/http"
+  },
+  "8453": {
+    "chainId": 8453,
+    "name": "Base Mainnet",
+    "rpcUrl": "https://mainnet.base.org"
+  },
+  "31337": {
+    "chainId": 31337,
+    "name": "Hardhat Testnet",
+    "rpcUrl": "http://localhost:8545"
+  }
+}

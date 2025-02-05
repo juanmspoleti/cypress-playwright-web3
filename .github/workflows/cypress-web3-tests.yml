@@ -1,0 +1,42 @@
+name: Cypress Web3 tests
+on:
+  workflow_dispatch:
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    container: cypress/browsers:node-22.12.0-chrome-131.0.6778.108-1-ff-133.0-edge-131.0.2903.70-1
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - run: corepack enable
+      - uses: actions/cache@v4
+        id: yarn-build-cache
+        with:
+          path: |
+            **/node_modules
+            ~/.cache/Cypress
+            **/build
+          key: ${{ runner.os }}-node_modules-files-build-${{ hashFiles('./yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-node_modules-build-
+      - name: Install and show git version
+        run: apt-get -y install git && git --version
+        id: git-install
+
+      # Install NPM dependencies, cache them correctly
+      # and run all Cypress tests
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+        env:
+          CYPRESS_WALLET_PRIVATE_KEY: ${{ secrets.CYPRESS_WALLET_PRIVATE_KEY }}
+          CYPRESS_NETWORK: "1"
+        with:
+          browser: chrome
+          headless: true
+      # store report
+      - name: Store Mochawesome report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cypress-mochawesome-report
+          path: cypress/reports

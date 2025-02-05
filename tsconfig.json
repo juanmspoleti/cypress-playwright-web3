@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+      "strict": true,
+      "target": "es5",
+      "jsx": "react",
+      "lib": ["es2022", "dom"],
+      "resolveJsonModule": true,
+      "esModuleInterop": true,
+      "types": ["cypress", "cypress-mochawesome-reporter"]
+    },
+    "include": ["**/*.ts"]
+  }
