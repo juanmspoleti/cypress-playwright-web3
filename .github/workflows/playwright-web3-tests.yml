@@ -19,6 +19,9 @@ jobs:
         run: yarn playwright install --with-deps
       - name: Build cache
         run: xvfb-run npx synpress playwright/wallet-setup
+        env:
+          WALLET_SEED_PHRASE: ${{ secrets.WALLET_SEED_PHRASE }}
+          WALLET_PASSWORD: ${{ secrets.WALLET_PASSWORD }}
       - name: Run Playwright tests
         run: xvfb-run npx playwright test
       - uses: actions/upload-artifact@v4
