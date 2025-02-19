@@ -13,6 +13,18 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: lts/*
+      - name: Install Playwright dependencies
+        run: pnpm dlx playwright@1.50.1 install-deps
+
+      # For now, we only need Chromium.
+      - name: Install browsers for Playwright
+        run: pnpm dlx playwright@1.50.1 install chromium
+
+      - name: Install linux dependencies
+        run: |
+          sudo apt-get install --no-install-recommends -y \
+          xvfb
+
       - name: Install dependencies
         run: npm install -g yarn && yarn
       - name: Install Playwright Browsers
