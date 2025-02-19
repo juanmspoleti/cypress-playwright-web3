@@ -35,6 +35,9 @@ jobs:
           WALLET_PASSWORD: ${{ secrets.WALLET_PASSWORD }}
       - name: Run Playwright tests
         run: xvfb-run npx playwright test
+        env:
+          WALLET_SEED_PHRASE: ${{ secrets.WALLET_SEED_PHRASE }}
+          WALLET_PASSWORD: ${{ secrets.WALLET_PASSWORD }}
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
         with:
