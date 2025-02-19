@@ -14,11 +14,11 @@ jobs:
         with:
           node-version: lts/*
       - name: Install Playwright dependencies
-        run: yarn playwright@1.50.1 install-deps
+        run: yarn playwright install-deps
 
       # For now, we only need Chromium.
       - name: Install browsers for Playwright
-        run: yarn playwright@1.50.1 install chromium
+        run: yarn playwright install chromium
 
       - name: Install linux dependencies
         run: |
