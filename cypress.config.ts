@@ -13,8 +13,8 @@ export default defineConfig({
   },
   chromeWebSecurity: false,
   env: {
-    cypress_wallet_private_key: process.env.CYPRESS_WALLET_PRIVATE_KEY,
-    network: process.env.CYPRESS_NETWORK,
+    cypress_wallet_private_key: process.env.WALLET_PRIVATE_KEY,
+    network: process.env.NETWORK,
   },
   e2e: {
     specPattern: "cypress/tests/**/*.cy.{ts,tsx}",

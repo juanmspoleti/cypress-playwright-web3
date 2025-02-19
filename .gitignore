@@ -131,3 +131,16 @@ dist
 
 # Report
 reports/
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+**/.DS_Store
+
+# Synpress
+.cache-synpress
+
+# VS Code
+.vscode
