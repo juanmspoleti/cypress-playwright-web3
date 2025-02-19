@@ -1,7 +1,9 @@
 {
     "compilerOptions": {
       "strict": true,
-      "target": "es5",
+      "target": "esnext",
+      "module": "es2015",  
+      "moduleResolution": "bundler",
       "jsx": "react",
       "lib": ["es2022", "dom"],
       "resolveJsonModule": true,
